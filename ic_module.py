@@ -18,7 +18,7 @@ from keras.optimizers import Adam
 from keras.utils import np_utils
 
 FileNames = ["img1.npy", "img2.npy", "img3.npy"]
-ClassNames = ["山下美月", "橋本環奈", "白石麻衣"]
+ClassNames = ["うさぎ", "いぬ", "ねこ"]
 hw = {"height":32, "width":32}        # リストではなく辞書型 中かっこで囲む
 
 
@@ -28,7 +28,7 @@ hw = {"height":32, "width":32}        # リストではなく辞書型 中かっ
 def PreProcess(dirname, filename, var_amount=3):
     num = 0
     arrlist = []
-    files = glob.glob(dirname + "/*.jpg")
+    files = glob.glob(dirname + "/*.jpeg")
 
     for imgfile in files:
         img = load_img(imgfile, target_size=(hw["height"], hw["width"]))    # 画像ファイルの読み込み
